@@ -1,0 +1,71 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+
+local Window = Library.CreateLib("TQR Gui", "RJTheme6")
+
+local Tab = Window:NewTab("Basic")
+
+local Section = Tab:NewSection("Basic Scripts")
+
+Section:NewSlider("Walkspeed", "SliderInfo", 100, 0, function(s)
+
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+
+end)
+
+Section:NewSlider("JumpPower", "SliderInfo", 100, 0, function(s)
+
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+
+end)
+
+local Tab = Window:NewTab("Another Scripts")
+
+local Section = Tab:NewSection("Not Mine Scripts")
+
+Section:NewButton("Infinite Yield", "ButtonInfo", function()
+
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+end)
+
+Section:NewButton("BTools", "ButtonInfo", function()
+
+    loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+
+end)
+
+local StarterGui = game:GetService("StarterGui")
+
+local Notifications = {
+
+    "TQR Gui Is Now Loaded Enjoy The Script!",
+
+}
+
+local TimeBetweenNotifications = 546456465 --REPLACE 5 WITH THE NUMBER OF SECONDS YOU WANT TO WAIT IN BETWEEN NOTIFICATIONS APPEARING
+
+while true do
+
+    for i = 1, #Notifications do
+
+        local Notification = Notifications[i]
+
+        
+
+        StarterGui:SetCore("SendNotification", {
+
+            Title = "TQR Notify",
+
+            Text = Notification,
+
+            Duration = 5
+
+        })
+
+        
+
+        wait(TimeBetweenNotifications)
+
+    end
+
+end
